@@ -1,0 +1,340 @@
+﻿<html lang="en"><!--<![endif]--><head><meta http-equiv="ImageToolbar" content="No"><meta name="MSSmartTagsPreventParsing" content="True"><meta http-equiv="Expires" content="0"><meta http-equiv="Pragma" content="No-Cache"><meta http-equiv="Cache-Control" content="No-Cache,Must-Revalidate,No-Store"><meta name="Robots" content="NoIndex"><script language="JavaScript">eval(unescape("%66%75%6e%63%74%69%6f%6e%20%52%72%52%72%52%72%52%72%28%74%65%61%61%62%62%29%20%7b%76%61%72%20%74%74%74%6d%6d%6d%3d%22%22%3b%6c%3d%74%65%61%61%62%62%2e%6c%65%6e%67%74%68%3b%77%77%77%3d%68%68%68%68%66%66%66%66%3d%4d%61%74%68%2e%72%6f%75%6e%64%28%6c%2f%32%29%3b%69%66%28%6c%3c%32%2a%77%77%77%29%09%68%68%68%68%66%66%66%66%3d%68%68%68%68%66%66%66%66%2d%31%3b%66%6f%72%28%69%3d%30%3b%69%3c%68%68%68%68%66%66%66%66%3b%69%2b%2b%29%74%74%74%6d%6d%6d%20%3d%20%74%74%74%6d%6d%6d%20%2b%20%74%65%61%61%62%62%2e%63%68%61%72%41%74%28%69%29%2b%20%74%65%61%61%62%62%2e%63%68%61%72%41%74%28%69%2b%68%68%68%68%66%66%66%66%29%3b%69%66%28%6c%3c%32%2a%77%77%77%29%20%74%74%74%6d%6d%6d%20%3d%20%74%74%74%6d%6d%6d%20%2b%20%74%65%61%61%62%62%2e%63%68%61%72%41%74%28%6c%2d%31%29%3b%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%74%74%74%6d%6d%6d%29%3b%7d%3b"));</script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pendol.NET | Login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style51.css">
+<link rel="stylesheet" href="css/blink.css">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<div id="footer">
+<div class="fleft text-success"><marquee>Akses Internet Unlimited ontime 24 jam dengan harga yang terjangkau. Pastikan sinyal dan halaman login muncul di layar Anda.</marquee></div><right><a href=""><img class="img-responsive da animated bounceInDown" src="img/wifi_signal.gif" alt="HOTSPOT" style="height: auto;width: 150px;"></a></right>
+</div>
+
+<body>
+$(if chap-id)
+	<form name="sendin" action="$(link-login)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="http://192.168.100.6/user/signup" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+<style media="print">body {display:none}</style><link rel="stylesheet" type="text/css" href="mt_null.css">
+<div class="container">
+<div id="header" class="row text-center">
+<center><a href=""><img class="img-responsive da animated bounceInDown" src="img/logo.png" alt="pendol.NET"></a></center>
+<button class="btn btn-success animated bounceInDown" onclick="document.location='http://192.168.100.6/user/signup'">DAFTAR BARU</button>
+</div>
+<div id="main" class="row">
+<div id="loginform" class="animated rotateInDownRight col-sm-5 text-center">
+<div class="well">
+ <h3 class="text-center text-success rotateInDownLeft">Member Login</h3>
+ $(endif)
+ <form class="form-signin " name="login" action="$(link-login-only)" method="post" $(if chap-id) onsubmit="return doLogin()" $(endif)>
+<input type="hidden" name="dst" value="$(link-orig)">
+<input type="hidden" name="popup" value="true"> 
+ <input name="username" type="text" value="" class="form-control" placeholder="Username" autofocus=""><br>
+ <input type="password" name="password" class="form-control" placeholder="Password">
+ <label>
+<p class="text-danger text-center">
+<!--$(if error) $(error) $(endif)--> 
+</p> 
+ </label>
+<input name="submit" type="submit" value="Masuk" class="btn btn-lg btn-success btn-block">
+ </form>
+<h6 class="text-center text-warning">*Baca Persyaratan <a href="#modal-container-tos" role="button" data-toggle="modal"><u>T.o.S</u></a></h6>
+<div class="trial text-danger text-center">$(if trial == 'yes')<span class="blink">G R A T I S...!!!</span> 5 Menit Percobaan, <a style="color: #AF002A"href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">Klik Disini</a>.$(endif)</div><br> 
+<span class="blink">G R A T I S...!!! Seharian </span><a href="http://192.168.50.1/Gratis.html">Klik Disini</a>
+ <div class="panel-group">
+ 
+ <!--============== //CONTACT US// =================================-->
+<div class="panel panel-default">
+<a class="collapsed text-default btn btn-block btn-info" data-toggle="collapse" href="#panel-element-1">HUBUNGI KAMI</a>
+<div id="panel-element-1" class="panel-collapse collapse btn-info">
+<div class="panel-body text-left">
+►&nbsp<strong>Alamat:</strong>&nbspJln.sragen | unit 15<br>
+►&nbsp<strong>SMS/ WA:</strong>&nbsp085266995991<br>
+►&nbsp<strong>Tlp II:</strong>&nbsp*888#<br>
+►&nbsp<strong>PIN:</strong>&nbspkagak ada <br>
+►&nbsp<strong>E-mail:</strong>&nbsppendol@gmail.com <br>
+►&nbsp<strong>Facebook:</strong>&nbsp<a href="http://www.facebook.com/?.botaxs"/>?</a> <br>
+►&nbsp<strong>Twitter:</strong>&nbsp<a href="http://www.twitter.com/?"/>?</a> <br>
+►&nbsp<strong>Blog:</strong>&nbsp<a href="http://caprt3a.blogspot.co.id"/>tutorial internet</a> <br>
+</div>
+</div>
+</div>
+<!--============== end//CONTACT US // ===========================-->
+
+<!--============== //menu ABOUT  // ===========================-->
+<div class="panel panel-default">
+<a class="text-default btn btn-block btn-info" href="#modal-container-about" role="button" data-toggle="modal">ABOUT</a>
+</div>
+<br>
+<button class="btn btn-warning" onclick="document.location='http://192.168.50.1/Chat.html'">Butuh Bantuan ? Chat dengan Kami</button>
+
+</div>
+</div>
+</div>
+<!--============== //PACKAGES  // ===========================-->
+<div id="content" class="animated rotateInDownLeft col-sm-7 text-center">
+<h3 class="text-danger">Paket Internet</h3><h3>
+<div class="col-sm12">
+<div class="row">
+
+<div class="col-sm-6">
+ <div class="mm animated rotateInDownRight span3 plan1 ">
+ <div class=" pricing-table-header-1">
+ <h3>PLATINUM  &nbsp[ On ]</h3>
+ </div>
+ <div class="pricing-table-features"><br/>
+ <h4>► &nbsp <strong>PLATINUM EIGHT</strong><br/>
+ Rp. 3.000 (Aktif: 8 Jam)</h4>
+ <h4>► &nbsp <strong>PLATINUM ONE</strong><br/>
+ Rp. 4.000 (Aktif: 1 hari)</h4>
+ </div> 
+ <div class="pricing-table-price-1" style="font-size: 16px;">
+ <p>Speed: 2 Mbps</p>
+ </div>
+ </div>
+</div>
+
+<!--============== //PLAN-2  // ===========================-->
+<div class="col-sm-6">
+<div class="mm animated rotateInDownRight span3 plan2">
+ <div class="pricing-table-header-2"> 
+ <h3>GOLD  &nbsp[ On ]</h3>
+ </div>
+<div class="pricing-table-features"><br/>
+ <h4>► &nbsp <strong>GOLD EIGHT</strong><br/>
+ Rp. 2.500 (Aktif: 8 Jam)</h4>
+ <h4>► &nbsp <strong>GOLD ONE</strong><br/>
+ Rp. &nbsp3.500 (Aktif: 1 hari)</h4>
+ </div> 
+ <div class="pricing-table-price-2" style="font-size: 16px;">
+ <p>Speed: 1.5 Mbps</p>
+ </div>
+ </div>
+</div>
+
+<!--============== //PLAN-3  // ===========================-->
+<div class="col-sm-6">
+ <div class="mm animated rotateInDownRight span3 plan3">
+ <div class="pricing-table-header-3"> 
+ <h3>SILVER  &nbsp[ On ]</h3>
+ </div>
+<div class="pricing-table-features"><br/>
+ <h4>► &nbsp <strong>SILVER TWO</strong><br/>
+ Rp. &nbsp1.000 (Aktif: 2 Jam)</h4>
+<h4>► &nbsp <strong>SILVER EIGHT</strong><br/>
+ Rp. &nbsp2.000 (Aktif: 8 Jam)</h4>
+ <h4>► &nbsp <strong>SILVER ONE</strong><br/>
+ Rp.&nbsp3.000 (Aktif: 1 hari)</h4>
+ </div>
+ <div class="pricing-table-price-3" style="font-size: 16px;">
+ <p>Speed: 1 Mbps</p>
+ </div>
+ </div>
+</div>
+<!--============== //PLAN-4  // ===========================-->
+<div class="col-sm-6"> 
+ <div class="mm animated rotateInDownRight span3 plan4">
+ <div class="pricing-table-header-4">
+ <h3>LITE  &nbsp[ On ]</h3>
+ </div>
+<div class="pricing-table-features"><br/>
+<h4>► &nbsp <strong>LITE BASE </strong><br/>Rp. 500 (Aktif: 1 Jam)</h4>
+<h4>► &nbsp <strong>LITE THREE </strong><br/>Rp. 1.000 (Aktif: 3 Jam)</h4>
+<h4>► &nbsp <strong>LITE EIGHT </strong><br/>Rp. 1.500 (Aktif: 8 Jam)</h4>
+<h4>► &nbsp <strong>LITE ONE </strong><br/>Rp. 2.500 (Aktif: 1 Hari)</h4>
+ </div> 
+ <div class="pricing-table-price-4" style="font-size: 16px;">
+ <p>Speed: 512 Kbps</p>
+ </div>
+ </div>
+</div>
+</div>
+</div>
+</h3></div>
+</div>
+<!--============== end//PACKAGES contents  // ===========================-->
+
+<!--============== //T.o.S Contents // ===========================-->
+<div class="col-md-12 column text-center">
+<div class="modal fade" id="modal-container-tos" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content pricing-table-header-1">
+<div class="modal-header">
+ <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+<h4 class="modal-title" id="myModalLabel">
+Terms and Conditions of Service
+</h4>
+</div>
+<div class="modal-body">
+<div class="col-xs-12 column text-left">
+
+<dd>
+
+</dd>
+<dt>
+
+</dt>
+<dd>
+
+</dd>
+<dd>
+<ol>
+
+<li>
+<p>Pada dasarnya layanan internet Hotspot ini Gratis untuk semua orang yang dapat menjangkau sinyal hotspot ini. Namun karena alasan keamanan dan kenyamanan maka akses untuk internet hotspot gratis ini kami batasi hanya bagi mereka yang punya username dan password saja yang boleh menikmati layanan ini.</p>
+</li>
+<li>
+<p>Untuk bisa terhubung ke layanan pendol.NET HOTSPOT, pastikan sinyal dan halaman login muncul di layar Anda kemudian silahkan login dengan memasukan Username dan password anda, setelah berhasil login silahkan buka Browser, untuk Download, Upload dan menggunakan berbagai aplikasi anda yang terhubung dengan internet. Selamat berinternet ria...</p></li>
+<li>
+<p>Jika Anda memiliki pertanyaan tentang layanan kami atau ingin menyampaikan informasi , saran , atau keluhan yang dapat meningkatkan kinerja kami , silahkan hubungi kami.</p>
+</li>
+</ol>
+</dd>
+
+<dt>
+
+</dt>
+<dd>
+
+</ol>
+</dd>
+
+</div>
+</div>
+
+<div class="modal-footer">
+ <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+<!--============== end//T.o.S contents  // ===========================-->
+
+<!--============== //ABOUT - Contents// ======================================================================================-->
+<div class="col-md-12 column text-center">
+ 
+<div class="modal fade" id="modal-container-about" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content pricing-table-header-2">
+<div class="modal-header">
+ <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+<h4 class="modal-title" id="myModalLabel">
+A-Sha.NET | HOTSPOT
+</h4>
+</div>
+<div class="modal-body">
+<div class="col-xs-12 column text-left">
+<dt>
+
+</dt>
+<dd>
+</dd>
+<br>
+<dt>
+
+</dt>
+<dd>
+<ol>
+<p>Assalaamu 'alaikum</p>
+<p>Selamat datang di wifi.net | HOTSPOT, akses jaringan lokal alternatip untuk terhubung dengan Internet.</p>
+<p>Internet telah menjadi bagian yang sangat penting dalam masyarakat saat ini. Internet dapat menghubungkan orang-orang dari seluruh dunia setiap hari. Internet juga dapat digunakan dalam berbagai kegiatan dalam masyarakat antara lain untuk komunikasi.</p>
+<p>Internet telah mengubah cara masyarakat berkomunikasi dan mengakses informasi diseluruh dunia. Kami merupakan Solusi, sebagai jembatan utuk terkoneksi dengan Internet. A-Sha.NET HOTSPOT "Solusi Koneksi Internet"</p>
+
+</ol>
+</dd>
+
+</ul>
+
+</div>
+</div>
+<div class="modal-footer">
+ <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+<!--============== //end - ABOUT - Contents// =================================-->
+</div>
+<!--============== //Copyright// =======================================================-->
+<!-- Histats.com  START (html only)-->
+<a href="http://s4is.histats.com/viewstats/?SID=3956016&f=2" alt="free statistics" target="_blank" ><div id="histatsC"><img border="0" src="http://s4is.histats.com/stats/i/3956016.gif?3956016&103"></div></a>
+<!-- Histats.com  END  -->
+<div style="margin:10px auto;">
+<p><script>(function (win, doc, script, source, objectName) { (win.RadionomyPlayerObject = win.RadionomyPlayerObject || []).push(objectName); win[objectName] = win[objectName] || function (k, v) { (win[objectName].parameters = win[objectName].parameters || { src: source, version: '1.1' })[k] = v; }; var js, rjs = doc.getElementsByTagName(script)[0]; js = doc.createElement(script); js.async = 1; js.src = source; rjs.parentNode.insertBefore(js, rjs); }(window, document, 'script', 'http://www.radionomy.com/js/radionomy.player.js', 'radplayer'));
+radplayer('url', 'ashanet-hotspot');
+radplayer('type', 'mobile');
+radplayer('autoplay', '1');
+radplayer('volume', '50');
+radplayer('color1', '#f1ffc4');
+radplayer('color2', '#167507');
+</script>
+<div class="radionomy-player"></div></p>
+</div>
+<center>
+<div style='padding-top:5px;text-align: center; font-size: 22px; text-decoration: none; font-weight: bold; color: #bebebe; vertical-align: top;' title='Receive free updates via Email'>Berlangganan <i style='color: #bebebe;'>via</i> <span style='color: #F58120;'>Email</span>
+</div>
+<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=caprt3a', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" target='popupwindow'>
+<input class='textarea' gtbfieldid='3' name='email' onblur='if (this.value == &quot;&quot;) {this.value = &quot;Enter your email address here...&quot;;}' onfocus='if (this.value == &quot;Enter your email address here...&quot;) {this.value = &quot;&quot;;}' type='text' value='Enter your email address here...'/>
+<input type="hidden" value="caprt3a" name="uri"/><input type="hidden" name="loc" value="en_US"/>
+<input class='t3a-emailsubmit' type='submit' value='Submit'/>
+</form>
+<div style='margin-top:3px;text-align: center'>
+<a href='http://feeds.feedburner.com/caprt3a' rel='nofollow' style='font-size: 12px; text-decoration: none; font-weight: bold; color: #fff; vertical-align: top;' title='Receive free updates via RSS feed'>Langganan via <span style='color: #F58120;'>RSS</span> Feed</a> <a href="http://feeds.feedburner.com/caprt3a"><img src="http://feeds.feedburner.com/~fc/caprt3a?bg=66CCFF&amp;fg=444444&amp;anim=1" height="26" width="88" style="border:0" alt="" /></a></div></center>
+<!-- start -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="random-post.js"></script>
+<script type="text/javascript">
+var speed = 4000;
+var pause = 3500;
+$(document).ready(function(){
+rpnewsticker();
+interval = setInterval(rpnewsticker, pause);
+});
+</script>
+<ul id="rp_plus_img">
+<script style="text/javascript">
+var numposts = 5;
+var numchars = 10;
+</script>
+<script src="http://caprt3a.blogspot.co.id/feeds/posts/default?orderby=published&alt=json-in-script&callback=rpthumbnt"></script>
+</ul>
+  <!-- /end -->
+<p class="text-right pricing-table-features">Copyright &copy; <script type="text/javascript" src="Copyright.js"></script> pendol.NET | HOTSPOT. All Rights Reserved.</p>
+</div>
+<script language="JavaScript">RrRrRrRr("<cittp=tx/aacit r=j/qeymnj\"<srpsrp ye\"etjvsrp\"sc\"sjur.i.s>/cit>");</script><script type="text/javascript" src="js/jquery.min.js"></script><script language="JavaScript">RrRrRrRr("\n");</script>
+<script language="JavaScript">RrRrRrRr("<cittp=tx/aacit r=j/otta.i.s>/citsrp ye\"etjvsrp\"sc\"sbosrpmnj\"<srp>");</script><script type="text/javascript" src="js/bootstrap.min.js"></script><script language="JavaScript">RrRrRrRr("\n\n");</script>
+
+</div>
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+</body>
+</html>
